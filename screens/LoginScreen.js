@@ -66,9 +66,9 @@ const LoginScreen = () => {
         <Text style={styles.buttonText}>Send OTP</Text>
       </TouchableOpacity>
 
-      {/* Back to Home */}
+      {/* Back to Screen */}
       <TouchableOpacity onPress={() => navigation.goBack()}>
-        <Text style={[styles.backText, { color: isDarkMode ? "#bbb" : "#555" }]}>Back to Home</Text>
+        <Text style={[styles.backText, { color: isDarkMode ? "#bbb" : "#555" }]}>Back to Main Screen</Text>
       </TouchableOpacity>
     </View>
   );
