@@ -1,7 +1,7 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { NavigationContainer } from "@react-navigation/native";
-import { View, Text, StyleSheet } from "react-native";
+import { NavigationContainer, useNavigation } from "@react-navigation/native";
+import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import { Ionicons } from "@expo/vector-icons"; // Icons for the tabs
 
 // Dummy Home Screen
@@ -22,6 +22,15 @@ const ProfileTab = () => (
 const Tab = createBottomTabNavigator();
 
 const HomeScreen = () => {
+    const navigation = useNavigation();
+
+    // Disable gestures to prevent swiping back
+    React.useEffect(() => {
+        navigation.setOptions({
+            gestureEnabled: false,
+        });
+    }, [navigation]);
+
     return (
         <Tab.Navigator
             screenOptions={({ route }) => ({
@@ -33,7 +42,7 @@ const HomeScreen = () => {
                 },
                 tabBarActiveTintColor: "tomato",
                 tabBarInactiveTintColor: "gray",
-                headerShown: false, // 👈 Hide header on all screens
+                headerShown: false, // Hide header on all screens
             })}
         >
             <Tab.Screen name="Home" component={HomeTab} />
@@ -41,7 +50,6 @@ const HomeScreen = () => {
         </Tab.Navigator>
     );
 };
-
 
 export default HomeScreen;
 
