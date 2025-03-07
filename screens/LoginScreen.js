@@ -27,7 +27,7 @@ const LoginScreen = () => {
     if (otp === "1122") {
       setIsOtpVerified(true);
       Alert.alert("OTP Verified", "You are now logged in.");
-      navigation.navigate("HomeScreen");  // Navigate to HomeScreen after successful OTP verification
+      navigation.navigate("Home");  // Navigate to HomeScreen after successful OTP verification
     } else {
       Alert.alert("Invalid OTP", "Please enter the correct OTP.");
     }
