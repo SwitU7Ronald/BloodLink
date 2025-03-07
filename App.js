@@ -1,6 +1,14 @@
-import React from 'react';
-import StackNavigator from './navigation/StackNavigator';
+import React from "react";
+import { NavigationContainer } from "@react-navigation/native";
+import StackNavigator from "./navigation/StackNavigator";
+import { ThemeProvider } from "./context/ThemeContext"; // Import ThemeProvider
 
 export default function App() {
-  return <StackNavigator/>;
+  return (
+    <ThemeProvider>
+      <NavigationContainer>
+        <StackNavigator />
+      </NavigationContainer>
+    </ThemeProvider>
+  );
 }
