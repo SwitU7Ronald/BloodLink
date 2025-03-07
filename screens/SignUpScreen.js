@@ -36,14 +36,14 @@ const SignupScreen = () => {
       return;
     }
     setIsOtpSent(true);
-    Alert.alert("OTP Sent", "Your OTP is 1122 for testing.");
+    // Alert.alert("OTP Sent", "Your OTP is 1122 for testing.");
   };
 
   // Verify OTP Function
   const verifyOtp = () => {
     if (otp === "1122") {
       setIsOtpVerified(true);
-      Alert.alert("OTP Verified", "You can now enter your details.");
+      // Alert.alert("OTP Verified", "You can now enter your details.");
     } else {
       Alert.alert("Invalid OTP", "Please enter the correct OTP.");
     }
